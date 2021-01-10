@@ -1,4 +1,5 @@
 # Cremer's 4 Types of Non-dynamic Correlation
+See :cite:`cremer2001`
 
 ## Type 1 Single-C, Multi-D
 ### Example: distorted ethylene $\ce{C_2H_4}$
@@ -47,3 +48,5 @@ ROOT   0:  E=     -38.8514204862 Eh
 ROOT   1:  E=     -38.7912602095 Eh  1.637 eV  13203.7 cm**-1
 	1.00000 [     1]: 11
 ```
+
+.. bibliography::

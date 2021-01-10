@@ -30,7 +30,9 @@ release = '0.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark'
+extensions = [
+    'recommonmark', 
+    'sphinxcontrib.bibtex',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -51,6 +53,9 @@ source_suffix = {
 #    '.md': CommonMarkParser,
 #    '.MD': CommonMarkParser,
 #}
+bibtex_bibfiles = [
+    'refs.bib'
+]
 
 # -- Options for HTML output -------------------------------------------------
 
