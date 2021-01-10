@@ -43,6 +43,11 @@ exclude_patterns = []
 
 
 master_doc = 'index'
+source_suffix = ['.rst', '.md', '.MD']
+source_parsers = {
+    '.md': CommonMarkParser,
+    '.MD': CommonMarkParser,
+}
 
 # -- Options for HTML output -------------------------------------------------
 
