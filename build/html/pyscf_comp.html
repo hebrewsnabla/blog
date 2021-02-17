@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>PySCF 1.7 安装 &mdash; quoi 0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> quoi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cremer.html">Cremer’s 4 Types of Non-dynamic Correlation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">quoi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>PySCF 1.7 安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/pyscf_comp.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyscf-1-7">
+<h1>PySCF 1.7 安装<a class="headerlink" href="#pyscf-1-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>安装环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>gcc 8.3.0, cmake 3.14.3, intel MKL 2019u3, python 3.7.4</p>
+</div>
+<div class="section" id="id2">
+<h2>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>下载依赖程序
+推荐：libcint &gt;= 4.0.7, libxc = 4.3.4, xcfun 用开发者修改的版本</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+wget https://github.com/sunqm/libcint/archive/v4.1.0.tar.gz -O libcint-4.1.0.tar.gz
+wget https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.gz
+wget https://github.com/fishjojo/xcfun/archive/cmake-3.5.tar.gz -O xcfun-2.1.1.tar.gz
+tar xzvf libcint-4.1.0.tar.gz
+tar xzvf libxc-4.3.4.tar.gz
+tar xzvf xcfun-2.1.1.tar.gz
+</pre></div>
+</div>
+<p>如果不能联网，在可联网机器上下载再传到目标机器上解压</p>
+<ul class="simple">
+<li><p>下载PySCF</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:pyscf/pyscf
+</pre></div>
+</div>
+<p>如果不能联网，可以在别处下载压缩包再解压</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="libcint">
+<h2>编译libcint<a class="headerlink" href="#libcint" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/libcint-4.1.0
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+
+cmake -DWITH_F12<span class="o">=</span><span class="m">1</span> -DWITH_RANGE_COULOMB<span class="o">=</span><span class="m">1</span> -DWITH_COULOMB_ERF<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DMIN_EXPCUTOFF<span class="o">=</span><span class="m">20</span> -DKEEP_GOING<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps <span class="se">\</span>
+-DCMAKE_INSTALL_LIBDIR:PATH<span class="o">=</span>lib ..
+make
+make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="libxc">
+<h2>编译libxc<a class="headerlink" href="#libxc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/libxc-4.3.4
+autoreconf -i <span class="c1"># release版本需要这一步</span>
+./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps <span class="se">\</span>
+--libdir<span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps/lib --enable-shared 
+make 
+make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="xcfun">
+<h2>编译xcfun<a class="headerlink" href="#xcfun" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/xcfun-cmake-3.5
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+
+cmake -DBUILD_SHARED_LIBS<span class="o">=</span><span class="m">1</span> -DXCFUN_MAX_ORDER<span class="o">=</span><span class="m">3</span> <span class="se">\</span>
+-DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps <span class="se">\</span>
+-DCMAKE_INSTALL_LIBDIR:PATH<span class="o">=</span>lib ..
+make 
+make install
+</pre></div>
+</div>
+<p>注意：老版本的<code class="docutils literal notranslate"><span class="pre">XC_MAX_ORDER</span></code>改成了<code class="docutils literal notranslate"><span class="pre">XCFUN_MAX_ORDER</span></code></p>
+</div>
+<div class="section" id="pyscf">
+<h2>编译PySCF<a class="headerlink" href="#pyscf" title="Permalink to this headline">¶</a></h2>
+<p>在<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>中添加</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps:<span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/pyscf/pyscf/lib
+mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+
+cmake -DBUILD_LIBCINT<span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-DBUILD_LIBXC<span class="o">=</span><span class="m">0</span> -DBUILD_XCFUN<span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps ..
+
+make
+</pre></div>
+</div>
+<p>在<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>中添加</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$HOME</span>/pyscf:<span class="nv">$PYTHONPATH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>可能遇到的问题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>找不到MKL
+见<a class="reference external" href="http://pyscf.org/pyscf/install.html#using-optimized-blas">pyscf.org/pyscf/install.html#using-optimized-blas</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, wsr.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

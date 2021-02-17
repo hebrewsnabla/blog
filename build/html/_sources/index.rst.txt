@@ -11,6 +11,7 @@ Welcome to blog-quoi!
    :caption: Contents:
 
    cremer
+   pyscf_comp
 
 Indices and tables
 ==================
