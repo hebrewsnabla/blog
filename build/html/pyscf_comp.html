@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PySCF 1.7 安装 &mdash; quoi 0.0 documentation</title>
+  <title>PySCF 1.7.5 安装 &mdash; quoi 0.0 documentation</title>
   
 
   
@@ -37,7 +37,8 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Cremer’s 4 Types of Non-dynamic Correlation" href="cremer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,8 +84,18 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="cremer.html">Cremer’s 4 Types of Non-dynamic Correlation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PySCF 1.7.5 安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">安装环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libcint">编译libcint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libxc">编译libxc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xcfun">编译xcfun</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyscf">编译PySCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">可能遇到的问题</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -133,7 +144,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>PySCF 1.7 安装</li>
+      <li>PySCF 1.7.5 安装</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -152,8 +163,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyscf-1-7">
-<h1>PySCF 1.7 安装<a class="headerlink" href="#pyscf-1-7" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pyscf-1-7-5">
+<h1>PySCF 1.7.5 安装<a class="headerlink" href="#pyscf-1-7-5" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>安装环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>gcc 8.3.0, cmake 3.14.3, intel MKL 2019u3, python 3.7.4</p>
@@ -161,9 +172,9 @@
 <div class="section" id="id2">
 <h2>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>下载依赖程序
-推荐：libcint &gt;= 4.0.7, libxc = 4.3.4, xcfun 用开发者修改的版本</p></li>
+<li><p>下载依赖程序</p></li>
 </ul>
+<p>推荐：libcint &gt;= 4.0.7, libxc = 4.3.4, xcfun 用开发者修改的版本</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
 wget https://github.com/sunqm/libcint/archive/v4.1.0.tar.gz -O libcint-4.1.0.tar.gz
 wget https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.gz
@@ -248,9 +259,9 @@ make
 <div class="section" id="id3">
 <h2>可能遇到的问题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>找不到MKL
-见<a class="reference external" href="http://pyscf.org/pyscf/install.html#using-optimized-blas">pyscf.org/pyscf/install.html#using-optimized-blas</a></p></li>
+<li><p>找不到MKL</p></li>
 </ul>
+<p>见<a class="reference external" href="http://pyscf.org/pyscf/install.html#using-optimized-blas">pyscf.org/pyscf/install.html#using-optimized-blas</a></p>
 </div>
 </div>
 
@@ -259,6 +270,9 @@ make
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cremer.html" class="btn btn-neutral float-left" title="Cremer’s 4 Types of Non-dynamic Correlation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

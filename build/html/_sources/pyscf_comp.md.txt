@@ -1,8 +1,9 @@
-# PySCF 1.7 安装
+# PySCF 1.7.5 安装
 ## 安装环境
 gcc 8.3.0, cmake 3.14.3, intel MKL 2019u3, python 3.7.4
 ## 下载
 * 下载依赖程序
+
 推荐：libcint >= 4.0.7, libxc = 4.3.4, xcfun 用开发者修改的版本
 ```bash
 cd ~
@@ -77,6 +78,7 @@ export PYTHONPATH=$HOME/pyscf:$PYTHONPATH
 ```
 ## 可能遇到的问题
 * 找不到MKL
+
 见[pyscf.org/pyscf/install.html#using-optimized-blas](http://pyscf.org/pyscf/install.html#using-optimized-blas)
 
 
