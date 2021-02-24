@@ -8,10 +8,16 @@ Welcome to blog-quoi!
 
 .. toctree::
    :maxdepth: 1 
-   :caption: Contents:
+   :caption: Contents
 
    cremer
    pyscf_comp
+
+.. toctree::
+   :maxdepth: 1 
+   :caption: QC Communications
+
+   QC_comm_01
 
 Indices and tables
 ==================
