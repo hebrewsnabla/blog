@@ -34,6 +34,7 @@ extensions = [
     'recommonmark', 
     'sphinx.ext.mathjax',
     'sphinxcontrib.bibtex',
+#    'myst_nb',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,6 +59,31 @@ bibtex_bibfiles = [
     'refs.bib'
 ]
 
+# -- Options for HTML output -------------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#
+html_theme = 'sphinx_book_theme'
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ['_static']
+html_theme_options = {
+    "repository_url": "https://github.com/hebrewsnabla/blog",
+    "use_repository_button": True,
+    "use_issues_button": True,
+#    "toc_title": "文档目录",
+}
+#myst_enable_extensions = [
+#    "amsmath",
+#    "colon_fence",
+#    "deflist",
+#    "dollarmath",
+#    "html_image",
+#]
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
             'enable_math': True,
@@ -65,15 +91,6 @@ def setup(app):
             }, True)
 #    app.add_transform(AutoStructify)
 #mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    # https://stackoverflow.com/questions/23211695/modifying-content-width-of-the-sphinx-theme-read-the-docs
+    app.add_css_file('custom.css')
 
-# -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'sphinx_rtd_theme'
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
