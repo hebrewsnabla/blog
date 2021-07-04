@@ -10,7 +10,7 @@ Otherwise, use **UHF -> UNO -> CASSCF**.
 "RHF stable" means E(RHF) = E(UHF).
 
 ### UHF case
-```
+```{code-block} python
 from pyscf import lib
 import guess, autocas, cidump
 
