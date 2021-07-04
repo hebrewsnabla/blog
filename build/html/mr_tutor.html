@@ -208,13 +208,13 @@
         
               <div>
                 
-  <section id="multireference-tutorial">
+  <section class="tex2jax_ignore mathjax_ignore" id="multireference-tutorial">
 <h1>Multireference Tutorial<a class="headerlink" href="#multireference-tutorial" title="Permalink to this headline">¶</a></h1>
 <section id="with-pyautomr">
 <h2>With pyAutoMR<a class="headerlink" href="#with-pyautomr" title="Permalink to this headline">¶</a></h2>
 <p>Current strategy of pyAutoMR:</p>
-<p>If RHF is stable: use RHF -&gt; PM LMO -&gt; CASSCF;</p>
-<p>Otherwise, use UHF -&gt; UNO -&gt; CASSCF.</p>
+<p>If RHF is stable: use <strong>RHF -&gt; PM LMO -&gt; CASSCF</strong>;</p>
+<p>Otherwise, use <strong>UHF -&gt; UNO -&gt; CASSCF</strong>.</p>
 <p>“RHF stable” means E(RHF) = E(UHF).</p>
 <section id="uhf-case">
 <h3>UHF case<a class="headerlink" href="#uhf-case" title="Permalink to this headline">¶</a></h3>
@@ -233,7 +233,11 @@
 <span class="n">cidump</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For a stretched N2, we need to do UHF first. Note that simple UHF guess will fall into RHF, and even <code class="docutils literal notranslate"><span class="pre">guess=mix</span></code> maybe doesn’t work. A practical way is using fragment guess, i.e. <code class="docutils literal notranslate"><span class="pre">guess=fragment</span></code> in Gaussian, or <code class="docutils literal notranslate"><span class="pre">guess.from_frag</span></code> in pyAutoMR.</p>
+<p>For a stretched N2, we need to do UHF first.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simple UHF guess will fall into RHF, and even <code class="docutils literal notranslate"><span class="pre">guess=mix</span></code> maybe doesn’t work. A practical way is using fragment guess, i.e. <code class="docutils literal notranslate"><span class="pre">guess=fragment</span></code> in Gaussian, or <code class="docutils literal notranslate"><span class="pre">guess.from_frag</span></code> in pyAutoMR.</p>
+</div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">[[0],[1]]</span></code> means the 0th atom belongs to frag0, and 1st atom belongs to frag1. <code class="docutils literal notranslate"><span class="pre">[0,0]</span></code> means charges of the 2 frags are 0,0 respectively. <code class="docutils literal notranslate"><span class="pre">[3,-3]</span></code> means the spin of the 2 frags. Note that spin equals 2S, or <code class="docutils literal notranslate"><span class="pre">n_a</span> <span class="pre">-</span> <span class="pre">n_b</span></code> in PySCF, not 2S+1. Also, we need to ensure that the total number of alpha/beta electrons equals that in total molecule, so the spin parameter cannot be <code class="docutils literal notranslate"><span class="pre">[3,3]</span></code>.
 You can see output like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">****</span> <span class="n">generating</span> <span class="n">fragment</span> <span class="n">guess</span> <span class="o">****</span>

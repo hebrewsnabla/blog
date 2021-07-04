@@ -31,10 +31,10 @@ release = '0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'recommonmark', 
+#    'recommonmark', 
     'sphinx.ext.mathjax',
     'sphinxcontrib.bibtex',
-#    'myst_nb',
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -49,7 +49,7 @@ exclude_patterns = []
 master_doc = 'index'
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.md': 'markdown',
+#    '.md': 'markdown',
 }
 #source_parsers = {
 #    '.md': CommonMarkParser,
@@ -76,13 +76,13 @@ html_theme_options = {
     "use_issues_button": True,
 #    "toc_title": "文档目录",
 }
-#myst_enable_extensions = [
-#    "amsmath",
-#    "colon_fence",
-#    "deflist",
-#    "dollarmath",
-#    "html_image",
-#]
+myst_enable_extensions = [
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "html_image",
+]
 
 def setup(app):
     app.add_config_value('recommonmark_config', {

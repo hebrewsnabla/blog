@@ -3,9 +3,9 @@
 ## With pyAutoMR 
 Current strategy of pyAutoMR:
 
-If RHF is stable: use RHF -> PM LMO -> CASSCF;
+If RHF is stable: use **RHF -> PM LMO -> CASSCF**;
 
-Otherwise, use UHF -> UNO -> CASSCF.
+Otherwise, use **UHF -> UNO -> CASSCF**.
 
 "RHF stable" means E(RHF) = E(UHF).
 
@@ -25,8 +25,10 @@ guess.check_stab(mf)
 mf2 = autocas.cas(mf)
 cidump.dump(mf2)
 ```
-For a stretched N2, we need to do UHF first. Note that simple UHF guess will fall into RHF, and even `guess=mix` maybe doesn't work. A practical way is using fragment guess, i.e. `guess=fragment` in Gaussian, or `guess.from_frag` in pyAutoMR.
-
+For a stretched N2, we need to do UHF first. 
+:::{Note}
+Simple UHF guess will fall into RHF, and even `guess=mix` maybe doesn't work. A practical way is using fragment guess, i.e. `guess=fragment` in Gaussian, or `guess.from_frag` in pyAutoMR.
+:::
 Here, `[[0],[1]]` means the 0th atom belongs to frag0, and 1st atom belongs to frag1. `[0,0]` means charges of the 2 frags are 0,0 respectively. `[3,-3]` means the spin of the 2 frags. Note that spin equals 2S, or `n_a - n_b` in PySCF, not 2S+1. Also, we need to ensure that the total number of alpha/beta electrons equals that in total molecule, so the spin parameter cannot be `[3,3]`.
 You can see output like
 ```
