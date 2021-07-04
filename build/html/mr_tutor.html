@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Multireference Tutorial &mdash; quoi 0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="QC Communication 01" href="QC_comm_01.html" />
+    <link rel="prev" title="PySCF 1.7.5 安装" href="pyscf_comp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> quoi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cremer.html">Cremer’s 4 Types of Non-dynamic Correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyscf_comp.html">PySCF 1.7.5 安装</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Multireference Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#with-pyautomr">With pyAutoMR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uhf-case">UHF case</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">QC Communications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="QC_comm_01.html">QC Communication 01</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">quoi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Multireference Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/mr_tutor.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="multireference-tutorial">
+<h1>Multireference Tutorial<a class="headerlink" href="#multireference-tutorial" title="Permalink to this headline">¶</a></h1>
+<section id="with-pyautomr">
+<h2>With pyAutoMR<a class="headerlink" href="#with-pyautomr" title="Permalink to this headline">¶</a></h2>
+<p>Current strategy of pyAutoMR:</p>
+<p>If RHF is stable: use RHF -&gt; PM LMO -&gt; CASSCF;</p>
+<p>Otherwise, use UHF -&gt; UNO -&gt; CASSCF.</p>
+<p>“RHF stable” means E(RHF) = E(UHF).</p>
+<section id="uhf-case">
+<h3>UHF case<a class="headerlink" href="#uhf-case" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">import</span> <span class="nn">guess</span><span class="o">,</span> <span class="nn">autocas</span><span class="o">,</span> <span class="nn">cidump</span>
+
+<span class="n">lib</span><span class="o">.</span><span class="n">num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">xyz</span> <span class="o">=</span> <span class="s1">&#39;N 0.0 0.0 0.0; N  0.0 0.0 1.9&#39;</span> <span class="c1">#sys.argv[1]</span>
+<span class="n">bas</span> <span class="o">=</span> <span class="s1">&#39;cc-pvdz&#39;</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">guess</span><span class="o">.</span><span class="n">from_frag</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">bas</span><span class="p">,</span> <span class="p">[[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">guess</span><span class="o">.</span><span class="n">check_stab</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+
+<span class="n">mf2</span> <span class="o">=</span> <span class="n">autocas</span><span class="o">.</span><span class="n">cas</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">cidump</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For a stretched N2, we need to do UHF first. Note that simple UHF guess will fall into RHF, and even <code class="docutils literal notranslate"><span class="pre">guess=mix</span></code> maybe doesn’t work. A practical way is using fragment guess, i.e. <code class="docutils literal notranslate"><span class="pre">guess=fragment</span></code> in Gaussian, or <code class="docutils literal notranslate"><span class="pre">guess.from_frag</span></code> in pyAutoMR.</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">[[0],[1]]</span></code> means the 0th atom belongs to frag0, and 1st atom belongs to frag1. <code class="docutils literal notranslate"><span class="pre">[0,0]</span></code> means charges of the 2 frags are 0,0 respectively. <code class="docutils literal notranslate"><span class="pre">[3,-3]</span></code> means the spin of the 2 frags. Note that spin equals 2S, or <code class="docutils literal notranslate"><span class="pre">n_a</span> <span class="pre">-</span> <span class="pre">n_b</span></code> in PySCF, not 2S+1. Also, we need to ensure that the total number of alpha/beta electrons equals that in total molecule, so the spin parameter cannot be <code class="docutils literal notranslate"><span class="pre">[3,3]</span></code>.
+You can see output like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">****</span> <span class="n">generating</span> <span class="n">fragment</span> <span class="n">guess</span> <span class="o">****</span>
+<span class="n">fragments</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])]</span> <span class="p">[(</span><span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">])]</span>
+<span class="n">converged</span> <span class="n">SCF</span> <span class="n">energy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">54.3911145621998</span>  <span class="o">&lt;</span><span class="n">S</span><span class="o">^</span><span class="mi">2</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mf">3.7540306</span>  <span class="mi">2</span><span class="n">S</span><span class="o">+</span><span class="mi">1</span> <span class="o">=</span> <span class="mf">4.0020148</span>
+<span class="n">converged</span> <span class="n">SCF</span> <span class="n">energy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">54.3911145621998</span>  <span class="o">&lt;</span><span class="n">S</span><span class="o">^</span><span class="mi">2</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mf">3.7540306</span>  <span class="mi">2</span><span class="n">S</span><span class="o">+</span><span class="mi">1</span> <span class="o">=</span> <span class="mf">4.0020148</span>
+       <span class="n">na</span>   <span class="n">nb</span>
+<span class="n">atom1</span>   <span class="mi">5</span>    <span class="mi">2</span>
+<span class="n">atom2</span>   <span class="mi">2</span>    <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Then, <code class="docutils literal notranslate"><span class="pre">check_stab</span></code> will do something like <code class="docutils literal notranslate"><span class="pre">stable=opt</span></code> in Gaussian, and <code class="docutils literal notranslate"><span class="pre">autocas.cas</span></code> will do UHF MO -&gt; UNO, and estimate the size of active space.
+Output file contains a clear illustration of the UNOs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UNO</span> <span class="n">ON</span><span class="p">:</span> <span class="p">[</span> <span class="mf">2.</span>        <span class="mf">2.</span>        <span class="mf">1.999103</span>  <span class="mf">1.997838</span>  <span class="mf">1.550306</span>  <span class="mf">1.174501</span>  <span class="mf">1.174501</span>  <span class="mf">0.825499</span>  <span class="mf">0.825499</span>  <span class="mf">0.449694</span>  <span class="mf">0.002162</span>  <span class="mf">0.000897</span>  <span class="mf">0.</span>        <span class="mf">0.</span>        <span class="mf">0.</span>
+  <span class="mf">0.</span>        <span class="mf">0.</span>        <span class="mf">0.</span>        <span class="mf">0.</span>        <span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>       <span class="o">-</span><span class="mf">0.</span>      <span class="p">]</span>
+<span class="n">UNO</span> <span class="ow">in</span> <span class="n">active</span> <span class="n">space</span>
+             <span class="c1">#0      #1      #2      #3      #4      #5     </span>
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">3</span><span class="n">s</span>                                               <span class="mf">0.184</span>
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">2</span><span class="n">px</span>              <span class="mf">0.154</span>  <span class="o">-</span><span class="mf">0.432</span>  <span class="o">-</span><span class="mf">0.487</span>  <span class="o">-</span><span class="mf">0.139</span>        
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">2</span><span class="n">py</span>              <span class="mf">0.432</span>   <span class="mf">0.154</span>  <span class="o">-</span><span class="mf">0.139</span>   <span class="mf">0.487</span>        
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">2</span><span class="n">pz</span>     <span class="o">-</span><span class="mf">0.442</span>                                   <span class="mf">0.565</span>
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">3</span><span class="n">px</span>              <span class="mf">0.106</span>  <span class="o">-</span><span class="mf">0.295</span>  <span class="o">-</span><span class="mf">0.323</span>                
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">3</span><span class="n">py</span>              <span class="mf">0.295</span>   <span class="mf">0.106</span>           <span class="mf">0.323</span>        
+  <span class="mi">0</span> <span class="n">N</span> <span class="mi">3</span><span class="n">pz</span>     <span class="o">-</span><span class="mf">0.295</span>                                   <span class="mf">0.390</span>
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">3</span><span class="n">s</span>                                              <span class="o">-</span><span class="mf">0.184</span>
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">2</span><span class="n">px</span>              <span class="mf">0.154</span>  <span class="o">-</span><span class="mf">0.432</span>   <span class="mf">0.487</span>   <span class="mf">0.139</span>        
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">2</span><span class="n">py</span>              <span class="mf">0.432</span>   <span class="mf">0.154</span>   <span class="mf">0.139</span>  <span class="o">-</span><span class="mf">0.487</span>        
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">2</span><span class="n">pz</span>      <span class="mf">0.442</span>                                   <span class="mf">0.565</span>
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">3</span><span class="n">px</span>              <span class="mf">0.106</span>  <span class="o">-</span><span class="mf">0.295</span>   <span class="mf">0.323</span>                
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">3</span><span class="n">py</span>              <span class="mf">0.295</span>   <span class="mf">0.106</span>          <span class="o">-</span><span class="mf">0.323</span>        
+  <span class="mi">1</span> <span class="n">N</span> <span class="mi">3</span><span class="n">pz</span>      <span class="mf">0.295</span>                                   <span class="mf">0.390</span>
+</pre></div>
+</div>
+<p>pyAutoMR will pick the orbitals having occupation number (ON) bewteen 1.98-0.02.
+And it’s clear that the six orbitals are: simga bonding, pi bonding, pi bonding, pi anti-bonding, pi anti-bonding, and sigma anti-bonding.</p>
+<p>Without pyAutoMR, we need to manually view and pick these orbitals, but now it’s automatic.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="QC_comm_01.html" class="btn btn-neutral float-right" title="QC Communication 01" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pyscf_comp.html" class="btn btn-neutral float-left" title="PySCF 1.7.5 安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, wsr.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

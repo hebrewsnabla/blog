@@ -32,6 +32,7 @@ release = '0.0'
 # ones.
 extensions = [
     'recommonmark', 
+    'sphinx.ext.mathjax',
     'sphinxcontrib.bibtex',
 ]
 
@@ -56,6 +57,14 @@ source_suffix = {
 bibtex_bibfiles = [
     'refs.bib'
 ]
+
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'enable_math': True,
+            'enable_inline_math': True,
+            }, True)
+#    app.add_transform(AutoStructify)
+#mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
 # -- Options for HTML output -------------------------------------------------
 

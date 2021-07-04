@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>PySCF 1.7.5 安装 &mdash; quoi 0.0 documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -38,6 +42,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multireference Tutorial" href="mr_tutor.html" />
     <link rel="prev" title="Cremer’s 4 Types of Non-dynamic Correlation" href="cremer.html" /> 
 </head>
 
@@ -83,7 +88,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="cremer.html">Cremer’s 4 Types of Non-dynamic Correlation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PySCF 1.7.5 安装</a><ul>
@@ -96,6 +101,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#id3">可能遇到的问题</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="mr_tutor.html">Multireference Tutorial</a></li>
+</ul>
+<p class="caption"><span class="caption-text">QC Communications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="QC_comm_01.html">QC Communication 01</a></li>
 </ul>
 
             
@@ -163,13 +173,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyscf-1-7-5">
+  <section id="pyscf-1-7-5">
 <h1>PySCF 1.7.5 安装<a class="headerlink" href="#pyscf-1-7-5" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id1">
+<section id="id1">
 <h2>安装环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>gcc 8.3.0, cmake 3.14.3, intel MKL 2019u3, python 3.7.4</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>下载<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>下载依赖程序</p></li>
@@ -195,8 +205,8 @@ tar xzvf xcfun-2.1.1.tar.gz
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">master</span><span class="o">.</span><span class="n">zip</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="libcint">
+</section>
+<section id="libcint">
 <h2>编译libcint<a class="headerlink" href="#libcint" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/libcint-4.1.0
 mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
@@ -209,8 +219,8 @@ make
 make install
 </pre></div>
 </div>
-</div>
-<div class="section" id="libxc">
+</section>
+<section id="libxc">
 <h2>编译libxc<a class="headerlink" href="#libxc" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/libxc-4.3.4
 autoreconf -i <span class="c1"># release版本需要这一步</span>
@@ -220,8 +230,8 @@ make
 make install
 </pre></div>
 </div>
-</div>
-<div class="section" id="xcfun">
+</section>
+<section id="xcfun">
 <h2>编译xcfun<a class="headerlink" href="#xcfun" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/xcfun-cmake-3.5
 mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
@@ -234,8 +244,8 @@ make install
 </pre></div>
 </div>
 <p>注意：老版本的<code class="docutils literal notranslate"><span class="pre">XC_MAX_ORDER</span></code>改成了<code class="docutils literal notranslate"><span class="pre">XCFUN_MAX_ORDER</span></code></p>
-</div>
-<div class="section" id="pyscf">
+</section>
+<section id="pyscf">
 <h2>编译PySCF<a class="headerlink" href="#pyscf" title="Permalink to this headline">¶</a></h2>
 <p>在<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>中添加</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/pyscf_deps:<span class="nv">$LD_LIBRARY_PATH</span>
@@ -255,15 +265,15 @@ make
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$HOME</span>/pyscf:<span class="nv">$PYTHONPATH</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>可能遇到的问题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>找不到MKL</p></li>
 </ul>
 <p>见<a class="reference external" href="http://pyscf.org/pyscf/install.html#using-optimized-blas">pyscf.org/pyscf/install.html#using-optimized-blas</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -271,6 +281,7 @@ make
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mr_tutor.html" class="btn btn-neutral float-right" title="Multireference Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="cremer.html" class="btn btn-neutral float-left" title="Cremer’s 4 Types of Non-dynamic Correlation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

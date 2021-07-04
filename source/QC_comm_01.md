@@ -1,4 +1,4 @@
-# QC Communications
+# QC Communication 01
 2021 Feb 28
 ## JPCA 
 Vol 25, Issue 5, Feb 11
@@ -21,13 +21,13 @@ Vol 12, Issue 5, Feb 11
 Vol 154, Issue 6, Feb 14
 
 * **r2SCAN-D4**: Dispersion corrected meta-GGA for general chemical applications 
-  + doi.org/10.1063/5.0041008
+  + [doi.org/10.1063/5.0041008](https://doi.org/10.1063/5.0041008)
 * **r2SCAN-3c**: A “Swiss army knife” composite electronic-structure method 
   + Stefan Grimme | U Bonn
-  + https://doi.org/10.1063/5.0040021
+  + [doi.org/10.1063/5.0040021](https://doi.org/10.1063/5.0040021)
 * Two-level iterative solver for **LR TDDFT with plane wave** basis set 
-  + Jinlong Yang | USTC
-  + doi.org/10.1063/5.0032464
+  + ..., Jinlong Yang | USTC
+  + [doi.org/10.1063/5.0032464](https://doi.org/10.1063/5.0032464)
   + KSSOLV, https://doi.org/10.1145/1499096.1499099
 * **RI approximation applied to PNOF correlation calculations **
   +  Juan Felipe Huan Lew-Yee, Mario Piris, and Jorge M. del Campo | U Nacional Autonoma de Mexico
@@ -46,7 +46,7 @@ Vol 154, Issue 6, Feb 14
   + Junzi Liu, Xuechen Zheng, Ayush Asthana, Chaoqun Zhang, and Lan Cheng | JHU
   + https://doi.org/10.1063/5.0038779
   + CFOUR
-* Energy exchange rate coefficients from vibrational inelastic O2($^3Σ_g^−$) + O2(^3Σ_g^−) collisions on a new spin-averaged potential energy surface
+* Energy exchange rate coefficients from vibrational inelastic O2($ ^3Σ_g^− $) + O2($^3Σ_g^−$) collisions on a new spin-averaged potential energy surface
   + Qizhen Hong, Quanhua Sun, Fernando Pirani, Mónica A. Valentín-Rodríguez, Ramón Hernández-Lamoneda, Cecilia Coletti, Marta I. Hernández, and Massimiliano Bartolomei
   + https://doi.org/10.1063/5.0041244
 * Time-dependent momentum expectation values from different quantum probability and flux densities 
