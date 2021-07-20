@@ -33,6 +33,8 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="QC Communication 01" href="QC_comm_01.html" />
@@ -209,6 +211,34 @@
 <h1>Multireference Scan of Diatomic Molecules<a class="headerlink" href="#multireference-scan-of-diatomic-molecules" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="simple-cases-h2-f2-and-n2">
 <h2>Simple Cases: H2, F2 and N2<a class="headerlink" href="#simple-cases-h2-f2-and-n2" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in the previous article, RHF stability and UNO occupation is highly important in choosing CASSCF strategy. Let’s illustarte that by plotting <span class="math notranslate nohighlight">\(&lt;S^2&gt;\)</span> and UNO occupation number of three simple cases.</p>
+<p>Here we can see that</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>CAS</p></th>
+<th class="head"><p>H2</p></th>
+<th class="head"><p>F2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RHF stable, LUNO&lt;0.02</p></td>
+<td><p>(0,0)</p></td>
+<td><p>&lt;= 0.6</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>RHF stable, LUNO&gt;0.02</p></td>
+<td><p>(2,2)</p></td>
+<td><p>0.7 - 1.2</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>RHF unstable, LUNO&gt;0.02</p></td>
+<td><p>(2,2)</p></td>
+<td><p>&gt;= 1.3</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
