@@ -13,6 +13,7 @@ Welcome to blog-quoi!
    cremer
    pyscf_comp
    mr_tutor
+   mr_scan
 
 .. toctree::
    :maxdepth: 1 

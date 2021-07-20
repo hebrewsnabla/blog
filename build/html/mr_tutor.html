@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multireference Tutorial &#8212; quoi 0.0 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -23,13 +22,13 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -208,15 +207,15 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="multireference-tutorial">
+  <div class="tex2jax_ignore mathjax_ignore section" id="multireference-tutorial">
 <h1>Multireference Tutorial<a class="headerlink" href="#multireference-tutorial" title="Permalink to this headline">¶</a></h1>
-<section id="with-pyautomr">
+<div class="section" id="with-pyautomr">
 <h2>With pyAutoMR<a class="headerlink" href="#with-pyautomr" title="Permalink to this headline">¶</a></h2>
 <p>Current strategy of pyAutoMR:</p>
 <p>If RHF is stable: use <strong>RHF -&gt; PM LMO -&gt; CASSCF</strong>;</p>
 <p>Otherwise, use <strong>UHF -&gt; UNO -&gt; CASSCF</strong>.</p>
 <p>“RHF stable” means E(RHF) = E(UHF).</p>
-<section id="uhf-case">
+<div class="section" id="uhf-case">
 <h3>UHF case<a class="headerlink" href="#uhf-case" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 <span class="kn">import</span> <span class="nn">guess</span><span class="o">,</span> <span class="nn">autocas</span><span class="o">,</span> <span class="nn">cidump</span>
@@ -274,9 +273,9 @@ Output file contains a clear illustration of the UNOs</p>
 <p>pyAutoMR will pick the orbitals having occupation number (ON) bewteen 1.98-0.02.
 And it’s clear that the six orbitals are: simga bonding, pi bonding, pi bonding, pi anti-bonding, pi anti-bonding, and sigma anti-bonding.</p>
 <p>Without pyAutoMR, we need to manually view and pick these orbitals, but now it’s automatic.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>
