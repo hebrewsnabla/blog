@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CASSCF计算 &#8212; quoi 0.0 documentation</title>
+    <title>CASSCF计算 &#8212; quoi  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,7 +56,7 @@
     <a class="navbar-brand text-wrap" href="index.html">
       
       
-      <h1 class="site-logo" id="site-title">quoi 0.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">quoi  documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -256,11 +256,30 @@
 </pre></div>
 </div>
 <p>下面我们可以做<strong>CASSCF</strong>计算</p>
+<ul class="simple">
+<li><p>使用pyAutoMR</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">automr</span> <span class="kn">import</span> <span class="n">autocas</span>
 <span class="n">mf2</span> <span class="o">=</span> <span class="n">autocas</span><span class="o">.</span><span class="n">cas</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="p">(</span><span class="mi">6</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
 </pre></div>
 </div>
 <p>Tip：autocas.cas可以自动判断活性空间，但是做扫描的时候为了保证活性空间一致，需要指定一个参数，这里的参数表示6个活性轨道，3个alpha活性电子，3个beta活性电子。不需要指定自旋多重度，如果算三重态就是(6,(4,2))。</p>
+<ul class="simple">
+<li><p>使用MOKIT</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">nproc</span><span class="o">=</span><span class="mi">8</span>
+<span class="o">%</span><span class="n">mem</span><span class="o">=</span><span class="mi">10</span><span class="n">gb</span>
+<span class="c1"># CASSCF(2,2)/cc-pvtz </span>
+
+<span class="n">mokit</span><span class="p">{}</span>
+
+<span class="mi">0</span> <span class="mi">1</span> 
+<span class="n">F</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="n">F</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+<p>MOKIT的输入格式与高斯类似，程序选项写在mokit后的花括号内。此处我们使用默认选项，什么都不用写。
+MOKIT会自动做RHF/UHF -&gt; GVB -&gt; CASSCF计算，自动程度比pyAutoMR高。</p>
 </div>
 
 
