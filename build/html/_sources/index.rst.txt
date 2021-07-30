@@ -14,6 +14,8 @@ Welcome to blog-quoi!
    pyscf_comp
    mr_tutor
    mr_scan
+   casscf
+   nevpt2
 
 .. toctree::
    :maxdepth: 1 
