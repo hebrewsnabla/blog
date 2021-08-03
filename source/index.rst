@@ -22,6 +22,7 @@ Welcome to blog-quoi!
    :caption: QC Communications
 
    QC_comm_01
+   QC_comm_02
 
 Indices and tables
 ==================
