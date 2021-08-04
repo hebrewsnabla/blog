@@ -76,3 +76,27 @@ Vol 154, Issue 8, Feb 28
 * Implementation of Perdew–Zunger self-interaction correction in real space using Fermi–Löwdin orbitals
   + [doi.org/10.1063/5.0031341](https://doi.org/10.1063/5.0031341)
   + Carlos M. Diaz, Phanish Suryanarayana, Qimen Xu, Tunna Baruah, John E. Pask, and Rajendra R. Zope | U Texas, El Paso
+
+## JCTC
+Vol 17, Issue 3, Mar 9
+
+* What Types of Chemical Problems Benefit from Density-Corrected DFT? A Probe Using an Extensive and Chemically Diverse Test Suite
+  + [doi.org/10.1021/acs.jctc.0c01055](https://doi.org/10.1021/acs.jctc.0c01055)
+  + Golokesh Santra and Jan M.L. Martin* | Weizmann Institute of Science
+* From Kohn–Sham to Many-Electron Energies via Step Structures in the Exchange-Correlation Potential
+  + [doi.org/10.1021/acs.jctc.0c01093](https://doi.org/10.1021/acs.jctc.0c01093)
+  + Eli Kraisler*, M. J. P. Hodgson, and E. K. U. Gross | The Hebrew Univ of Jerusalem
+* [Reduction of Hartree–Fock Wavefunctions to Kohn–Sham Effective Potentials Using Multiresolution Analysis](https://doi.org/10.1021/acs.jctc.0c01103)
+  + Julius B. Stückrath* and Florian A. Bischoff* | Humboldt-Universität zu Berlin, 
+* [Efficient Density-Fitted Explicitly Correlated Dispersion and Exchange Dispersion Energies](https://doi.org/10.1021/acs.jctc.0c01158)
+  + Monika Kodrycka and Konrad Patkowski* | Auburn University
+* [Benchmarking Magnetizabilities with Recent Density Functionals](https://doi.org/10.1021/acs.jctc.0c01190)
+  + Susi Lehtola*, Maria Dimitrova, Heike Fliegl, and Dage Sundholm* | U Helsinki
+* [Diabatic Many-Body Expansion: Development and Application to Charge-Transfer Reactions](https://doi.org/10.1021/acs.jctc.0c01231)
+  + Amiel S. P. Paz and William J. Glover* | NYUSH
+* **Second-Order Orbital Optimization** with Large Active Spaces Using Adaptive Sampling Configuration Interaction (**ASCI**) and Its Application to Molecular Geometry Optimization
+  + [doi.org/10.1021/acs.jctc.0c01292](https://doi.org/10.1021/acs.jctc.0c01292)
+  + Jae Woo Park* | Chungbuk National University 
+* Low-Scaling **GW** with Benchmark Accuracy and Application to Phosphorene Nanosheets
+  + [doi.org/10.1021/acs.jctc.0c01282](https://doi.org/10.1021/acs.jctc.0c01282)
+  + Jan Wilhelm*, Patrick Seewald, and Dorothea Golze
