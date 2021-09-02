@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>QC Communication 02, 2021Mar &#8212; quoi  documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="QC Communication 01" href="QC_comm_01.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">quoi  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Contents
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="cremer.html">
+   Cremer’s 4 Types of Non-dynamic Correlation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pyscf_comp.html">
+   PySCF 1.7.5 安装
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  MR Practice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_practice/mr_tutor.html">
+   Multireference Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_practice/mr_scan.html">
+   Multireference Scan of Diatomic Molecules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_practice/casscf.html">
+   CASSCF计算
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_practice/nevpt2.html">
+   NEVPT2/MRCI计算
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  QC Communications
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="QC_comm_01.html">
+   QC Communication 01
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   QC Communication 02, 2021Mar
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/QC_comm_02.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hebrewsnabla/blog"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hebrewsnabla/blog/issues/new?title=Issue%20on%20page%20%2FQC_comm_02.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jpca">
+   JPCA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jpcl">
+   JPCL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jcp">
+   JCP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jctc">
+   JCTC
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="qc-communication-02-2021mar">
+<h1>QC Communication 02, 2021Mar<a class="headerlink" href="#qc-communication-02-2021mar" title="Permalink to this headline">¶</a></h1>
+<section id="jpca">
+<h2>JPCA<a class="headerlink" href="#jpca" title="Permalink to this headline">¶</a></h2>
+<p>Vol 125, Issue 6, Feb 18</p>
+<ul class="simple">
+<li><p>Nothing interesting</p></li>
+</ul>
+<p>Vol 125, Issue 7, Feb 25</p>
+<ul class="simple">
+<li><p>Beryllium and Magnesium Metal Clusters: New Globally Stable Structures and G0W0 Calculations</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jpca.0c08960">doi.org/10.1021/acs.jpca.0c08960</a></p></li>
+<li><p>Sunila Bakhsh, Xiaohui Liu, Yanyong Wang, Lixin He, and Xinguo Ren*</p></li>
+</ul>
+</li>
+</ul>
+<p>Vol 125, Issue 8, Mar 4</p>
+<ul class="simple">
+<li><p>Autobiography of Emily A. Carter</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jpca.0c10044">doi.org/10.1021/acs.jpca.0c10044</a></p></li>
+<li><p>Emily A. Carter</p></li>
+</ul>
+</li>
+<li><p>Spatial Contributions to Nuclear Magnetic Shieldings</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jpca.0c10884">doi.org/10.1021/acs.jpca.0c10884</a></p></li>
+<li><p>Rahul Kumar Jinger, Heike Fliegl, Radovan Bast, Maria Dimitrova, Susi Lehtola, and Dage Sundholm*</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="jpcl">
+<h2>JPCL<a class="headerlink" href="#jpcl" title="Permalink to this headline">¶</a></h2>
+<p>Vol 12, Issue 6, Feb 18</p>
+<ul class="simple">
+<li><p>Nothing interesting</p></li>
+</ul>
+<p>Vol 12, Issue 7, Feb 25</p>
+<ul class="simple">
+<li><p>Nothing interesting</p></li>
+</ul>
+<p>Vol 12, Issue 8, Mar 4</p>
+<ul class="simple">
+<li><p>Nuclear Magnetic Resonance: A Spectroscopic Probe to Understand the Electronic Structure and Reactivity of Molecules and Materials</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jpclett.0c03520">doi.org/10.1021/acs.jpclett.0c03520</a></p></li>
+<li><p>Christopher P. Gordon, Lukas Lätsch, and Christophe Copéret*</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="jcp">
+<h2>JCP<a class="headerlink" href="#jcp" title="Permalink to this headline">¶</a></h2>
+<p>Vol 154, Issue 7, Feb 21</p>
+<ul class="simple">
+<li><p>Up- and down-conversion in molecules and materials</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0045323">doi.org/10.1063/5.0045323</a></p></li>
+<li><p>Bruno Ehrler, Nobuhiro Yanai, and Lea Nienhaus</p></li>
+</ul>
+</li>
+<li><p>Uncertainty estimation for molecular dynamics and sampling editors-pick</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0036522">doi.org/10.1063/5.0036522</a></p></li>
+<li><p>Giulio Imbalzano, Yongbin Zhuang, Venkat Kapil, Kevin Rossi, Edgar A. Engel, Federico Grasselli, and Michele Ceriotti</p></li>
+</ul>
+</li>
+<li><p>Vibrational heat-bath configuration interaction</p>
+<ul>
+<li><p><strong>VHCI</strong></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0035454">doi.org/10.1063/5.0035454</a></p></li>
+<li><p>Jonathan H. Fetherolf and Timothy C. Berkelbach | Columbia</p></li>
+</ul>
+</li>
+<li><p>Analytic gradients for <strong>MCPDFT</strong> with density fitting: Development and application to geometry optimization in the ground and excited states</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0039258">doi.org/10.1063/5.0039258</a></p></li>
+<li><p>Thais R. Scott, Meagan S. Oakley, Matthew R. Hermes, Andrew M. Sand, Roland Lindh, Donald G. Truhlar, and Laura Gagliardi | Chicago</p></li>
+</ul>
+</li>
+<li><p>Too big, too small, or just right? A benchmark assessment of density functional theory for predicting the spatial extent of the electron density of small chemical systems</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0038694">doi.org/10.1063/5.0038694</a></p></li>
+<li><p>Diptarka Hait, Yu Hsuan Liang, and Martin Head-Gordon | UCB</p></li>
+</ul>
+</li>
+<li><p>The Devil’s Triangle of Kohn–Sham density functional theory and excited states</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0035446">doi.org/10.1063/5.0035446</a></p></li>
+<li><p>Rodrigo A. Mendes, Roberto L. A. Haiduke, and Rodney J. Bartlett | U Florida</p></li>
+</ul>
+</li>
+</ul>
+<p>Vol 154, Issue 8, Feb 28</p>
+<ul class="simple">
+<li><p>A new form of transcorrelated Hamiltonian inspired by range-separated DFT</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0044683">doi.org/10.1063/5.0044683</a></p></li>
+<li><p>Emmanuel Giner | CNRS</p></li>
+</ul>
+</li>
+<li><p>A Fock-operator CAS-SCF method combined with frozen-density embedding</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0037088">doi.org/10.1063/5.0037088</a></p></li>
+<li><p>Nils Schieschke, Tilmann Bodenstein, and Sebastian Höfener | KIT</p></li>
+</ul>
+</li>
+<li><p>Spin relaxation in radical pairs from the stochastic Schrödinger equation editors-pick</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0040519">doi.org/10.1063/5.0040519</a></p></li>
+<li><p>Thomas P. Fay, Lachlan P. Lindoy, and David E. Manolopoulos | Oxford</p></li>
+</ul>
+</li>
+<li><p>ΔSCF Dyson orbitals and pole strengths from natural ionization orbitals</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0040454">doi.org/10.1063/5.0040454</a></p></li>
+<li><p>Hassan Harb and Hrant P. Hratchian | UC Merced</p></li>
+</ul>
+</li>
+<li><p>Analysis of the kinetic energy functional in the generalized gradient approximation</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0040973">doi.org/10.1063/5.0040973</a></p></li>
+<li><p>Héctor I. Francisco, Javier Carmona-Espíndola, and José L. Gázquez | Universidad Autónoma Metropolitana-Iztapalapa</p></li>
+</ul>
+</li>
+<li><p>Orbital entanglement and correlation from pCCD-tailored coupled cluster wave functions</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0038205">doi.org/10.1063/5.0038205</a></p></li>
+<li><p>Artur Nowak, Örs Legeza, and Katharina Boguslawski | Nicolaus Copernicus University in Toruń</p></li>
+</ul>
+</li>
+<li><p>Implementation of Perdew–Zunger self-interaction correction in real space using Fermi–Löwdin orbitals</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1063/5.0031341">doi.org/10.1063/5.0031341</a></p></li>
+<li><p>Carlos M. Diaz, Phanish Suryanarayana, Qimen Xu, Tunna Baruah, John E. Pask, and Rajendra R. Zope | U Texas, El Paso</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="jctc">
+<h2>JCTC<a class="headerlink" href="#jctc" title="Permalink to this headline">¶</a></h2>
+<p>Vol 17, Issue 3, Mar 9</p>
+<ul class="simple">
+<li><p>What Types of Chemical Problems Benefit from Density-Corrected DFT? A Probe Using an Extensive and Chemically Diverse Test Suite</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01055">doi.org/10.1021/acs.jctc.0c01055</a></p></li>
+<li><p>Golokesh Santra and Jan M.L. Martin* | Weizmann Institute of Science</p></li>
+</ul>
+</li>
+<li><p>From Kohn–Sham to Many-Electron Energies via Step Structures in the Exchange-Correlation Potential</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01093">doi.org/10.1021/acs.jctc.0c01093</a></p></li>
+<li><p>Eli Kraisler*, M. J. P. Hodgson, and E. K. U. Gross | The Hebrew Univ of Jerusalem</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01103">Reduction of Hartree–Fock Wavefunctions to Kohn–Sham Effective Potentials Using Multiresolution Analysis</a></p>
+<ul>
+<li><p>Julius B. Stückrath* and Florian A. Bischoff* | Humboldt-Universität zu Berlin,</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01158">Efficient Density-Fitted Explicitly Correlated Dispersion and Exchange Dispersion Energies</a></p>
+<ul>
+<li><p>Monika Kodrycka and Konrad Patkowski* | Auburn University</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01190">Benchmarking Magnetizabilities with Recent Density Functionals</a></p>
+<ul>
+<li><p>Susi Lehtola*, Maria Dimitrova, Heike Fliegl, and Dage Sundholm* | U Helsinki</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01231">Diabatic Many-Body Expansion: Development and Application to Charge-Transfer Reactions</a></p>
+<ul>
+<li><p>Amiel S. P. Paz and William J. Glover* | NYUSH</p></li>
+</ul>
+</li>
+<li><p><strong>Second-Order Orbital Optimization</strong> with Large Active Spaces Using Adaptive Sampling Configuration Interaction (<strong>ASCI</strong>) and Its Application to Molecular Geometry Optimization</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01292">doi.org/10.1021/acs.jctc.0c01292</a></p></li>
+<li><p>Jae Woo Park* | Chungbuk National University</p></li>
+</ul>
+</li>
+<li><p>Low-Scaling <strong>GW</strong> with Benchmark Accuracy and Application to Phosphorene Nanosheets</p>
+<ul>
+<li><p><a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c01282">doi.org/10.1021/acs.jctc.0c01282</a></p></li>
+<li><p>Jan Wilhelm*, Patrick Seewald, and Dorothea Golze</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="QC_comm_01.html" title="previous page">QC Communication 01</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By wsr<br/>
+        
+            &copy; Copyright 2021, wsr.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

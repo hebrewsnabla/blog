@@ -35,6 +35,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinxcontrib.bibtex',
     'myst_parser',
+    'sphinxcontrib.pdfembed',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

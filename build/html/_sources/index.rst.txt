@@ -12,16 +12,28 @@ Welcome to blog-quoi!
 
    cremer
    pyscf_comp
-   mr_tutor
-   mr_scan
-   casscf
-   nevpt2
+
+.. toctree::
+   :maxdepth: 1 
+   :caption: MR Practice
+
+   mr_practice/mr_tutor
+   mr_practice/mr_scan
+   mr_practice/casscf
+   mr_practice/nevpt2
+
+.. toctree::
+   :maxdepth: 1 
+   :caption: MR Theory
+
+   mr_theory/mcscf
 
 .. toctree::
    :maxdepth: 1 
    :caption: QC Communications
 
    QC_comm_01
+   QC_comm_02
 
 Indices and tables
 ==================
