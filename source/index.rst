@@ -5,7 +5,7 @@
 
 Welcome to blog-quoi!
 ================================
-
+..
 .. toctree::
    :maxdepth: 1 
    :caption: Contents
@@ -27,7 +27,7 @@ Welcome to blog-quoi!
    :caption: MR Theory
 
    mr_theory/mcscf
-
+..
 .. toctree::
    :maxdepth: 1 
    :caption: QC Communications
