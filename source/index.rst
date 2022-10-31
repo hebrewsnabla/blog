@@ -6,12 +6,12 @@
 Welcome to blog-quoi!
 ================================
 ..
-.. toctree::
-   :maxdepth: 1 
-   :caption: Contents
-
-   cremer
-   pyscf_comp
+ /.. toctree::
+ /   :maxdepth: 1 
+ /   :caption: Contents
+ /
+ /   cremer
+ /   pyscf_comp
 
 .. toctree::
    :maxdepth: 1 
@@ -28,12 +28,12 @@ Welcome to blog-quoi!
 
    mr_theory/mcscf
 ..
-.. toctree::
-   :maxdepth: 1 
-   :caption: QC Communications
-
-   QC_comm_01
-   QC_comm_02
+ /.. toctree::
+ /   :maxdepth: 1 
+ /   :caption: QC Communications
+ /
+ /   QC_comm_01
+ /   QC_comm_02
 
 Indices and tables
 ==================
