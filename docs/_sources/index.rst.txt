@@ -5,13 +5,16 @@
 
 Welcome to blog-quoi!
 ================================
+
+.. toctree::
+   :maxdepth: 1 
+   :caption: Contents
+
+   pyautomr_1
+
 ..
- /.. toctree::
- /   :maxdepth: 1 
- /   :caption: Contents
- /
- /   cremer
- /   pyscf_comp
+ / cremer
+ / pyscf_comp
 
 .. toctree::
    :maxdepth: 1 
