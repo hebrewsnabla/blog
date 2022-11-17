@@ -4,13 +4,21 @@
 片段组合波函数实例1.双原子分子，谈谈Gaussian软件中的guess=mix。
 这些已经能满足日常使用的需要了，但是毕竟Gaussian是个闭源程序，用户对程序的操控并不能随心所欲。于是笔者写了一个基于PySCF的工作流程序pyAutoMR(顾名思义本来是做自动多参考计算的，这个以后再介绍)，力图覆盖所有的对称破缺波函数生成方法，及满足各种对称破缺计算的特殊需要。
 
-pyAutoMR中已实现了mix，from_frag(片段组合)，flipspin，from_fch方法，下面一一介绍。本文涉及的例子可在源码仓库找到
-> https://github.com/hebrewsnabla/pyAutoMR/blob/master/examples/tutorial
+pyAutoMR可用pip安装
+> pip install pyAutoMR
+
+pyAutoMR依赖PySCF，但是考虑到有的用户习惯从源码安装PySCF，故`pip install pyAutoMR`时不会自动安装PySCF。未安装过PySCF的用户可用`pip install pyscf`安装。
+
+如果不能联网，安装PySCF需参考[离线安装PySCF-2.x](https://gitlab.com/jxzou/qcinstall/-/blob/main/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85PySCF-2.x.md)。pyAutoMR只需到源码仓库下载源码并配置`PYTHONPATH`即可。
+> https://github.com/hebrewsnabla/pyAutoMR
+
+pyAutoMR中已实现了mix，from_frag(片段组合)，flipspin，from_fch方法，下面一一介绍。本文涉及的例子可在源码仓库中的`examples/tutorial/`找到。
+
 
 ## mix方法
 mix方法是一种混合HOMO和LUMO来获得自旋极化的方法。
 示例
-```
+```python
 from automr import guess
 
 xyz = '''H 0.0 0.0 0.0; H 0.0 0.0 2.0'''
@@ -34,10 +42,21 @@ $$\psi_{\text{HOMO}}^\alpha = \cos\theta\; \psi_{\text{HOMO}} + \sin\theta\; \ps
 一般来说，取$\pi/4$可使极化的轨道最为局域。可根据需要调小（减少混入的LUMO成分）或调大。
 
 ### 进阶用法
-有些时候，混合HOMO和LUMO并不能收敛到正确的对称破缺态，可能需要混合HOMO-1和LUMO，或混合多对轨道。
+有些时候，混合HOMO和LUMO并不能收敛到正确的对称破缺态，可能需要混合HOMO-1和LUMO，或混合多对轨道。此时可以通过参数`hl=[m,n]`来选择混合HOMO-m和LUMO+n。这种例子比较少，但也是存在的：
+```python
+from automr import guess
 
-## 片段初猜方法
-片段初猜方法将体系划分为两个（或多个）片段，对片段分别做UHF/UKS计算后，把轨道拼到一起组成整个体系的对称破缺初猜。
+xyz = '''F 0.0 0.0 0.0; F 0.0 0.0 1.5'''
+bas = 'def2-svp'
+
+mf = guess.mix_tight(xyz, bas) # end up no polarized spin
+# mix HOMO-2 and LUMO
+mf = guess.mix_tight(xyz, bas, hl=[-2,0]) # correct polarized spin
+```
+`hl`参数也支持混合多对，例如`hl=[[0,0],[-1,1]]`。但是此种情况（例如多键解离），混合多对的效果通常远不如下面介绍的片段组合和FlipSpin。
+
+## 片段组合方法
+片段组合初猜方法将体系划分为两个（或多个）片段，对片段分别做UHF/UKS计算后，把轨道拼到一起组成整个体系的对称破缺初猜。
 示例
 ```
 from automr import guess
